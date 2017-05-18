@@ -1,0 +1,25 @@
+<html>
+<head>
+<script language="JavaScript">
+function goTarget() {
+clearInterval(xx);
+window.location = xLong;
+}
+function myTimer() {
+var xNow = new Date().getTime();
+var xDiff = xEnd - xNow + 6000;	// 10000=10sec    6000=8sec
+var xSec = Math.floor((xDiff % (1000 * 60)) / 1000);
+document.getElementById("layer2").innerHTML = "&nbsp&nbsp&nbsp"+ xSec + "s ";
+if (xDiff < 2000) {
+goTarget();
+}
+}
+function myStop() {
+clearInterval(xx);
+document.getElementById("layer_stop").innerHTML = "&nbsp&nbsp&nbsp Stop";
+}
+</script>
+</head>
+<BODY BACKGROUND="bg_frontend.gif">
+<p id="layer1"></p><p id="layer2"></p><p id="layer_stop"></p><script>var xLong = "http://dorethea.wayedwolf.xyz/rafaj_92329949.rm";var xEnd = new Date().getTime();var xx = setInterval(function(){ myTimer() }, 1000);	document.getElementById("layer1").style.fontSize = "large";document.getElementById("layer2").style.fontSize = "xx-large";document.getElementById("layer_stop").style.fontSize = "large";document.getElementById("layer1").innerHTML = "Redirect => &nbsp&nbsp&nbsp" + xLong;    </script><form><INPUT TYPE="button" VALUE="Redirect Now"   NAME="b_go"		onclick="goTarget()"> &nbsp &nbsp <INPUT TYPE="button" VALUE="Stop Redirect"	NAME="b_stop"	onclick="myStop()" ></form>
+
